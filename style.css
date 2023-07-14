@@ -1,0 +1,228 @@
+:root {
+    --white: rgba(222, 222, 222, 0.874);
+    --purple: #bf03dbff;
+    --darkBlue: rgb(10, 25, 52);
+    --lightBlue: rgb(51, 86, 147);
+}
+
+html {
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    font-family: "vazir";
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background: linear-gradient(18deg, var(--lightBlue) 0%, var(--darkBlue) 100%);
+}
+
+/** Header Start **/
+
+header {
+    width: 100%;
+    height: 100vh;
+    padding-top: 15px;
+}
+
+/*? Navbar Start  */
+
+.header-top {
+    width: 100%;
+    height: 60px;
+}
+
+.navbar {
+    position: sticky;
+    top: 5rem;
+    margin: 0 auto;
+    padding: 0 5rem;
+    color: var(--white);
+    display: flex;
+    width: 80%;
+    height: 60px;
+    background: rgb(13, 35, 74);
+    background: linear-gradient(35deg, rgba(249, 249, 249, 0.2) 9%, rgba(255, 255, 255, 0.2) 100%);
+    border-radius: 26px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
+    transition: height .3s ease-in;
+    z-index: 2;
+}
+
+.uper-menu-mobile {
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.burger-icon {
+    cursor: pointer;
+    height: 22px;
+    justify-content: space-evenly;
+}
+
+.menu-line {
+    display: flex;
+    width: 25px;
+    height: 3.5px;
+    background-color: var(--white);
+}
+
+.logo-container {
+    font-size: 1.6rem;
+    font-family: 'Chela One', cursive;
+    letter-spacing: .3rem;
+}
+
+.logo {
+    cursor: default;
+}
+
+.logo span {
+    color: var(--purple);
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+}
+
+.resize {
+    height: 260px;
+    transition: height .3s ease-in;
+    flex-direction: column;
+}
+
+.uper-space-changer {
+    padding-top: 1.2rem;
+    margin-bottom: 1.5rem;
+    height: 4.8rem;
+}
+
+nav {
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+nav a {
+    font-size: 1.7rem;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+    margin-top: .7rem;
+    padding-right: .2rem;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #bf03dbff;
+}
+
+/*? Navbar Finished */
+/*? Header Main Start */
+
+.header-main {
+    height: calc(100vh - 106px);
+    flex-direction: column-reverse;
+}
+
+.header-discription {
+    text-align: center;
+    width: 100%;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+.header-main-icon {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.icon-circle {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--purple);
+    border-radius: 50%;
+    background-color: var(--darkBlue);
+}
+
+.name {
+    font-size: 4rem;
+}
+
+.job {
+    font-size: 1.7rem;
+}
+
+.job span {
+    color: var(--purple);
+}
+
+.job span::after {
+    content: '';
+    border-right: 4px solid var(--purple);
+    animation: blink .5s infinite ease;
+}
+
+.header-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.tel {
+    width: 24px;
+    height: 24px;
+}
+
+.header-main-img {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 2rem 5rem;
+}
+
+/*? Header Main Start !*/
+/** Header Finish **/
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: "vazir";
+    src: url(./assets/font/Vazir.woff) format("woff"),
+        url(./assets/font/Vazir.woff) format("woff")
+}
+
+/* #bf03dbff purple
+/* rgb(10, 25, 52) sormeiy
+/* rgb(51, 86, 147) abi asemani
+/* rgba(222, 222, 222, 0.874) white */
+/* animation: toAnimation 1s infinite alternate-reverse !important; */
+/* @keyframes toAnimation { */
+/* 0% { */
+/* transform: translateX(.5rem) */
+/* } */
+/* 100%{ */
+/* transform: translateX(-.5rem) */
+/* } */
+/* } */

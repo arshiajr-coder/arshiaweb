@@ -1,0 +1,43 @@
+@media screen and (min-width: 576px) {
+    
+}
+@media screen and (min-width: 768px) {
+    
+}
+@media screen and (min-width: 992px) {
+    .logo-container{
+        font-size: 1.7rem;
+    }
+    .navbar{
+        justify-content: space-between;
+    }
+    nav{
+        width: 60%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .uper-menu-mobile{
+        width: auto;
+    }
+    .menu-line{
+        display: none;
+    }
+    nav a{
+        margin: 0;
+        font-size: 1.4rem;
+        
+    }
+    nav a:hover{
+        margin-bottom: -4px;
+        border-bottom: 4px solid rgb(190, 3, 219);
+        background-color: transparent;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    nav a{
+        margin: 0;
+        font-size: 1.7rem;
+    }
+}
