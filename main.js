@@ -28,23 +28,19 @@ function type() {
   const timeout = setTimeout(type, 250);
 
   if (letter.length === currentText.length) {
-    // console.log(currentText.length);
     index = 0;
     count++;
     setTimeout(back, 800)
     clearTimeout(timeout);
   }
-  console.log(letter);
 }
 
 let indexBack = texts[count].length
 function back() {
   letter = letter.slice(0, indexBack--);
   job.innerText = `${letter}`;
-  console.log(letter);
   const timeout2 = setTimeout(back, 250);
   if (letter.length === 0) {
-    console.log("letter.length === 0");
     indexBack = currentText.length - 1
     type();
     clearTimeout(timeout2)
