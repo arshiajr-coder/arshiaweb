@@ -9,6 +9,30 @@ function openMenu() {
   nav.classList.toggle("show");
 }
 
+addEventListener("DOMContentLoaded", startModal);
+
+function startModal() {
+  const body = document.querySelector("body");
+  body.classList.add("start-mode");
+
+  const startModalBtn = document.querySelector(".start-modal .btn");
+  startModalBtn.addEventListener("click", backToWeb);
+
+  function backToWeb() {
+
+    const startModalSection = document.querySelector(".start-modal-section");
+    const startModalDiv = document.querySelector(".start-modal");
+    startModalDiv.style.width = 0;
+    startModalDiv.style.height = 0;
+    setTimeout(()=>{
+      startModalSection.style.display = "none";
+    }, 120)
+    body.classList.remove("start-mode");
+
+  }
+
+}
+
 const texts = ["ربات تلگرام", "فرانت اند"];
 const job = document.querySelector(".job span");
 
@@ -30,22 +54,21 @@ function type() {
   if (letter.length === currentText.length) {
     index = 0;
     count++;
-    setTimeout(back, 800)
+    setTimeout(back, 800);
     clearTimeout(timeout);
   }
 }
 
-let indexBack = texts[count].length
+let indexBack = texts[count].length;
 function back() {
   letter = letter.slice(0, indexBack--);
   job.innerText = `${letter}`;
   const timeout2 = setTimeout(back, 250);
   if (letter.length === 0) {
-    indexBack = currentText.length - 1
+    indexBack = currentText.length - 1;
     type();
-    clearTimeout(timeout2)
+    clearTimeout(timeout2);
   }
 }
-
 
 type();
