@@ -7,6 +7,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -14,6 +15,10 @@ html {
     margin: 0;
     box-sizing: border-box;
     font-family: "vazir";
+}
+
+body {
+    background-color: var(--darkBlue);
 }
 
 .align {
@@ -29,11 +34,46 @@ html {
     cursor: pointer;
 }
 
-.start-mode{
+.loading-container {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(240, 240, 240);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.loading {
+    border-radius: 50%;
+}
+
+.loading-container p {
+    padding: .5rem;
+    width: 30rem;
+    color: var(--purple);
+    font-size: 1.6rem;
+}
+
+.hidden {
+    animation: fadeOut .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+.start-mode {
     position: relative;
 }
 
-.start-mode::before{
+.start-mode::before {
     width: 100%;
     height: 100%;
     content: '';
@@ -44,7 +84,7 @@ html {
     backdrop-filter: blur(10px);
 }
 
-.start-modal-section{
+.start-modal-section {
     cursor: default;
     position: fixed;
     top: 50%;
@@ -53,8 +93,8 @@ html {
     z-index: 100;
 }
 
-.start-modal{
-    transition: width .3s , height .3s;
+.start-modal {
+    transition: width .3s, height .3s;
     text-align: center;
     background-color: whitesmoke;
     width: 320px;
@@ -65,11 +105,11 @@ html {
     font-weight: bold;
 }
 
-.bell-container{
+.bell-container {
     text-align: right;
 }
 
-.bell-container img{
+.bell-container img {
     width: 80px;
     height: 80px;
     position: relative;
@@ -80,10 +120,11 @@ html {
     text-align: right;
 }
 
-.start-modal h2{
+.start-modal h2 {
     font-size: 3rem;
 }
-.start-modal p{
+
+.start-modal p {
     font-size: 1.7rem;
     margin: 1rem 0 2.5rem 0;
     padding: 2rem;
@@ -91,13 +132,90 @@ html {
     display: inline-block;
 }
 
-.start-modal button{
+.start-modal button {
     margin-top: -1rem;
     background-color: var(--lightBlue);
     color: var(--white);
     padding: 1rem 2rem;
     cursor: pointer;
     font-weight: bold;
+}
+
+.section-alert {
+    display: flex;
+    align-items: center;
+    width: 4rem;
+    height: 6rem;
+    position: fixed;
+    top: 10rem;
+    background-color: var(--purple);
+    color: var(--white);
+    font-size: 1.6rem;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    z-index: 4;
+    transition: width .7s ease-in-out;
+    overflow: hidden;
+    box-shadow: -1px -1px 2px rgb(255, 255, 255, .2),
+        inset 2px 2px 5px rgb(255, 255, 255, .2),
+        1px 1px 15px rgba(0, 0, 0, 0.4),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.alert-icon-container {
+    position: absolute;
+    left: -.1rem;
+    width: 4rem;
+    height: 100%;
+    background-color: white;
+}
+
+.section-alert img {
+    width: 2.5rem;
+}
+
+.section-alert p {
+    font-weight: bold;
+    font-size: 1.7rem;
+    position: absolute;
+    top: 15px;
+    width: 35rem;
+    display: none;
+    margin-right: 2rem;
+}
+
+.show-alert {
+    width: 20rem;
+    height: 6rem;
+}
+
+.to-up {
+    opacity: 0;
+    position: fixed;
+    background-color: white;
+    border-radius: 50%;
+    padding: .5rem;
+    bottom: 4rem;
+    left: 5rem;
+    cursor: pointer;
+    box-shadow: -1px -1px 2px rgb(255, 255, 255, .2),
+        inset 2px 2px 5px rgb(255, 255, 255, .2),
+        1px 1px 15px rgba(0, 0, 0, 0.4),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 4;
+    transition: opacity .3s;
+}
+
+.to-up div {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--darkBlue);
+}
+
+.to-up img {
+    width: 2.8rem;
+    transform: rotate(180deg);
 }
 
 /** Header Start **/
@@ -131,6 +249,27 @@ header {
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
     transition: height .3s ease-in;
     z-index: 2;
+}
+
+nav a:last-child{
+    position: relative;
+}
+
+.completing{
+    opacity: 0;
+    position: absolute;
+    background-color: var(--darkBlue);
+    padding: .2rem .5rem;
+    border-radius: 5px;
+    right: 11rem;
+    bottom: .3rem;
+    font-size: 1.1rem;
+}
+
+
+nav a:last-child:hover .completing{
+    opacity: 1;
+    transition: opacity .5s;
 }
 
 .uper-menu-mobile {
@@ -195,7 +334,7 @@ nav a {
     font-size: 1.7rem;
     text-decoration: none;
     color: var(--white);
-    font-weight: 700;
+    font-weight: normal;
     margin-top: .7rem;
     padding-right: .2rem;
     border-radius: 5px;
@@ -223,7 +362,7 @@ nav a:hover {
     flex-direction: column;
 }
 
-.header-main-icon {
+.social-icon {
     width: 100%;
     margin-top: 1rem;
 }
@@ -270,6 +409,7 @@ nav a:hover {
 }
 
 /*? Header Main Finish !*/
+
 .down-icon-container {
     text-align: center;
     width: 100%;
@@ -288,7 +428,7 @@ nav a:hover {
     width: 35px;
     height: 35px;
     animation: toAnimation .5s infinite alternate-reverse !important;
-
+    cursor: default;
 }
 
 /** Header Finish **/
@@ -296,7 +436,6 @@ nav a:hover {
 
 main {
     padding-top: 20rem;
-    background-color: var(--darkBlue);
 }
 
 .tabs-container {
@@ -320,6 +459,7 @@ main {
 .active {
     background-color: var(--white) !important;
     color: var(--darkBlue) !important;
+    transition: all .3s;
 }
 
 .categories-tabs button {
@@ -329,11 +469,19 @@ main {
     color: var(--white);
 }
 
+.work-samples-section {
+    margin: 0 1rem;
+}
+
 .work-samples {
     margin: 5rem 0 0 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 4rem 2rem;
+}
+
+.empty-container{
+    grid-template-columns: repeat(1, 1fr)!important;
 }
 
 .work-sample-item {
@@ -347,6 +495,12 @@ main {
         inset 2px 2px 5px rgb(255, 255, 255, .2),
         8px 30px 30px rgba(0, 0, 0, 0.4),
         inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.empty{
+    width: 25rem;
+    color: var(--white);
+    font-size: 1.4rem;
 }
 
 .img-container {
@@ -365,7 +519,6 @@ main {
     cursor: default;
     margin: 1rem 0;
     height: 10.5rem;
-    font-weight: bold;
 }
 
 .work-sample-title {
@@ -396,16 +549,16 @@ main {
 
 .skills-section {
     width: 100%;
-    height: 110rem;
+    height: 108rem;
     align-items: flex-end;
-    margin-bottom: 20rem;
+    margin-top: 25rem;
 }
 
 .skills-container {
-    padding: 2rem 5rem;
+    padding: 2rem 4rem;
     text-align: center;
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     box-shadow: -1px -1px 2px rgb(255, 255, 255, .2),
         inset 2px 2px 5px rgb(255, 255, 255, .2),
         8px 30px 30px rgba(0, 0, 0, 0.4),
@@ -425,13 +578,14 @@ main {
 }
 
 .skills-items h3 {
-    width: 100%;
+    width: 50%;
     font-size: 2rem;
     padding-top: .5rem;
     letter-spacing: .3rem;
 }
 
 .skill {
+    width: 100%;
     cursor: default;
     display: flex;
     flex-direction: column;
@@ -444,7 +598,7 @@ main {
         inset -2px -2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 1.5rem;
     padding: 1rem;
-    background-color: var(--white);
+    background-color: rgb(237, 237, 237);
     transition: .3s;
 }
 
@@ -499,8 +653,9 @@ main {
     color: var(--purple);
 }
 
-.services-section{
-    /* height: 100rem; */
+.services-section {
+    height: 115rem;
+    margin-top: 10rem;
     align-items: flex-end;
 }
 
@@ -516,7 +671,7 @@ main {
     position: relative;
     width: 300px;
     height: 220px;
-    background-color: var(--white);
+    background-color: rgb(237, 237, 237);
     margin: 0 0 7rem 0;
     display: flex;
     flex-direction: column;
@@ -526,11 +681,16 @@ main {
         8px 30px 30px rgba(0, 0, 0, 0.4),
         inset -2px -2px 5px rgba(0, 0, 0, 0.3);
     border-radius: 3px;
+    transition: transform 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.05);
 }
 
 .card-icon {
     position: absolute;
-    top: -4rem;
+    top: -3.5rem;
     left: 10rem;
     width: 10rem;
     height: 10rem;
@@ -541,17 +701,44 @@ main {
 .card-icon-circle {
     width: 8rem;
     height: 8rem;
-    background-color: var(--white);
+    background-color: rgb(237, 237, 237);
     border-radius: 50%;
     border: 3px solid var(--darkBlue);
     box-shadow:
         inset 2px 2px 5px rgb(255, 255, 255, .2),
         8px 10px 30px rgba(0, 0, 0, 0.4),
         inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s;
+}
+
+.card:hover .card-icon-circle {
+    width: 90%;
+    height: 90%;
+}
+
+.card:not(:hover) .card-icon-circle {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes icon-animation {
+    0% {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    100% {
+        width: 95%;
+        height: 95%;
+    }
 }
 
 .card-icon-circle img {
     width: 3.8rem;
+}
+
+.card-text {
+    height: 15rem;
 }
 
 .card-title {
@@ -561,26 +748,111 @@ main {
     color: var(--darkBlue);
 }
 
-.card-text {
+.card-description {
     margin: 0 auto;
     width: 70%;
     padding: .5rem 1rem 3rem 1rem;
     font-size: 1.4rem;
     text-align: center;
-    font-weight: bold;
     color: var(--darkBlue);
 }
 
-.soon{
+.soon {
     color: var(--darkBlue);
     font-size: 4rem;
     font-weight: bold;
+}
+
+.about-me {
+    margin: 0 auto;
+    width: 100%;
+    height: 75rem;
+    flex-direction: row-reverse;
+}
+
+.about-img-container {
+    display: none;
+}
+
+.about-text {
+    margin: 0 auto;
+    width: 85%;
+    height: 40rem;
+    max-width: 500px;
+    padding: 2rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: 5px;
+    box-shadow: 0 7px 15px 0 rgba(238, 238, 238, 0.13), 0 1px 4px 0 rgba(255, 255, 255, 0.11);
+    line-height: 2.3rem;
+}
+
+.about-text li {
+    display: none;
+    list-style: none;
+    height: 100%;
+}
+
+.li-chosed{
+    display: block!important;
+}
+
+.about-text h3 {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: purple;
+}
+
+.about-text p {
+    margin-top: 2rem;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--darkBlue);
+}
+
+.next-back {
+    margin-top: -5rem;
+    margin-right: 5.5rem;
+    text-align: right;
+}
+
+.next-back img {
+    width: 4rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+footer {
+    flex-direction: column-reverse;
+    padding: 1rem;
+    margin-top: 10rem;
+    background: rgb(10, 25, 52);
+    background: linear-gradient(-135deg, rgba(10, 25, 52, 1) 15%, rgba(51, 86, 147, 1) 15%);
+}
+
+footer span {
+    color: purple;
+    text-shadow: 0px 0px 2px var(--purple);
+}
+
+footer .social-icon {
+    width: 25%;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    text-align: center;
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+    cursor: default;
 }
 
 @keyframes bell {
     0% {
         transform: rotate(20deg);
     }
+
     100% {
         transform: rotate(15deg);
     }
@@ -611,8 +883,3 @@ main {
     src: url(./assets/font/Vazir.woff) format("woff"),
         url(./assets/font/Vazir.woff) format("woff")
 }
-
-/* #bf03dbff purple
-/* rgb(10, 25, 52) sormeiy
-/* rgb(51, 86, 147) abi asemani
-/* rgba(222, 222, 222, 0.874) white */
