@@ -39,11 +39,6 @@
         top: 6rem;
     }
 
-    .to-up {
-        right: 5rem;
-        left: auto;
-    }
-
     .work-samples {
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem 3rem;
@@ -87,6 +82,11 @@
 }
 
 @media screen and (min-width: 992px) {
+
+    .to-up {
+        display: block;
+    }
+
     .section-alert p {
         margin-right: 2rem;
         font-size: 1.8rem;

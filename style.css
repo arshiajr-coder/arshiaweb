@@ -191,6 +191,7 @@ body {
 
 .to-up {
     opacity: 0;
+    display: none;
     position: fixed;
     background-color: white;
     border-radius: 50%;
