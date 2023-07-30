@@ -184,11 +184,6 @@ body {
     margin-right: 2rem;
 }
 
-.show-alert {
-    width: 20rem;
-    height: 6rem;
-}
-
 .to-up {
     opacity: 0;
     display: none;
