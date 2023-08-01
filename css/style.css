@@ -248,33 +248,33 @@ header {
     z-index: 2;
 }
 
-.navbar-mini{
+.navbar-mini {
     justify-content: space-between;
     padding: 0 3rem;
 }
 
-.navbar-mini .logo{
+.navbar-mini .logo {
     font-size: 1.6rem;
 }
 
-.nav-mini{
+.nav-mini {
     display: flex;
     align-items: center;
-    width: auto!important;
+    width: auto !important;
 }
 
-.nav-mini a{
+.nav-mini a {
     margin: 0;
     padding: 0;
     font-size: 1.4rem;
     display: flex;
 }
 
-.nav-mini a:hover{
+.nav-mini a:hover {
     background-color: transparent;
 }
 
-.nav-mini a img{
+.nav-mini a img {
     width: 20px;
 }
 
@@ -620,7 +620,7 @@ main {
     letter-spacing: .3rem;
 }
 
- .skill {
+.skill {
     margin: 0 auto;
     border-radius: 5px;
     width: 230px;
@@ -630,40 +630,41 @@ main {
     flex-direction: column;
     align-items: center;
     direction: ltr;
-    box-shadow: -1px -1px 2px rgba(0, 0, 0, .5),
+    box-shadow:
         inset 2px 2px 5px rgba(5, 5, 5, .5),
-        8px 30px 30px rgba(0, 0, 0, 0.3),
         inset -2px -2px 5px rgba(0, 0, 0, 0.5);
     margin-bottom: 1.5rem;
     padding: 1.5rem;
-    background-color: rgb(237, 237, 237);
+    background-color: rgba(11, 28, 62, 0.5);
+    color: var(--white);
     transition: border .3s;
 }
 
-.skill-show{
+.skill-show {
     border: 5px solid purple;
     padding: 1.1rem;
-    transition: padding 0s;
+    transition: background-color .3s;
+    background-color: rgb(237, 237, 237);
 }
 
 
-.skill-show .skill-bar-max{
+.skill-show .skill-bar-max {
     opacity: 1;
     transition: opacity .2s;
 }
 
-.radio-container{
+.radio-container {
     width: 100%;
     display: flex;
     justify-content: right;
 }
 
-.radio-container input{
+.radio-container input {
     transform: scale(1.5);
     accent-color: var(--purple);
 }
 
-.about-skill{
+.about-skill {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -673,10 +674,11 @@ main {
 
 .skill h3 {
     font-size: 2rem;
-    margin-bottom: 1.5rem;
 }
 
-.skill-show h3{
+.skill-show h3 {
+    transition: color .3s;
+    color: var(--darkBlue);
     font-size: 1.6rem;
 }
 
@@ -685,12 +687,12 @@ main {
     margin-bottom: 1.5rem;
 }
 
-.skill-show:nth-child(2) h3{
+.skill-show:nth-child(2) h3 {
     font-size: 1.8rem;
 }
 
 
-.skill-bar-max{
+.skill-bar-max {
     opacity: 0;
     border-radius: 5px;
     width: 95%;
@@ -698,62 +700,12 @@ main {
     background-color: rgb(206, 206, 206);
 }
 
-.skill-bar-now{
+.skill-bar-now {
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    width: 70%;
     height: 1rem;
     background-color: var(--purple);
 }
-
-/* 
-
-.skill:hover {
-    background-color: rgb(17, 36, 69);
-}
-
-.skill:hover.skill h3 {
-    color: var(--white);
-    transition: .3s;
-
-}
-
-.stars {
-    display: flex;
-    margin: 1rem 0;
-    flex-direction: row-reverse;
-}
-
-.stars input {
-    position: relative;
-    display: flex;
-    width: 2rem;
-    height: 4rem;
-    justify-content: center;
-    align-items: center;
-    -webkit-appearance: none;
-    appearance: none;
-    overflow: hidden;
-}
-
-.stars input::before {
-    content: '⦿';
-    position: absolute;
-    font-family: fontAwesome;
-    font-size: 3rem;
-    left: 3px;
-    transition: 0.5s;
-}
-
-.stars input:nth-child(odd)::before {
-    right: 6px;
-    left: initial;
-}
-
-.stars input:checked~input::before,
-.stars input:checked::before {
-    color: var(--purple);
-} */
 
 .services-section {
     height: 115rem;

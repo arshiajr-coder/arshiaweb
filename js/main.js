@@ -305,3 +305,15 @@ function checked(event){
     skillBox.classList.add("skill-show")
   }
 }
+
+///
+
+const skillBars = document.querySelectorAll(".skill-bar-now")
+
+skillBars.forEach((item)=>{
+  const percent = item.classList[1].split("-")[1]
+  if (percent === "100") {
+    item.style.borderRadius = "5px";
+  }
+  item.style.width = percent+ "%"
+})
