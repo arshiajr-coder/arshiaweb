@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./media-query.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media-query.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,8 +17,8 @@
     <a href="https://icons8.com"></a>
     <title>Document</title>
   </head>
-  <body>
 
+  <body>
     <section class="loading-container align">
       <img class="loading" src="./assets/img/Spin-1s-200px.gif" alt="" />
       <p>بارگذاری بعضی از تصاویر سایت ممکن است برای ip ایران کمی طول بکشد</p>
@@ -84,10 +84,10 @@
             <a href="#skills">تخصص ها</a>
             <a href="#services">خدمات</a>
             <a href="#about">درباره من</a>
-            <a href="#">
+            <a href="" onclick="modifyUrl('Mini Projects', './miniProjects.html')">
               <p class="completing">درحال تکمیل</p>
               مینی پروژه ها
-              </a>
+            </a>
           </nav>
         </div>
       </section>
@@ -240,93 +240,69 @@
           </div>
           <div class="skills-items">
             <div class="skill">
-              <h3>Html</h3>
-              <div class="stars">
-                <input type="radio" name="html" />
-                <input type="radio" name="html" />
-                <input type="radio" name="html" checked />
-                <input type="radio" name="html" />
-                <input type="radio" name="html" />
-                <input type="radio" name="html" />
-                <input type="radio" name="html" />
-                <input type="radio" name="html" />
-                <input type="radio" name="html" />
-                <input type="radio" name="html" />
+              <div class="radio-container">
+                <input type="radio" name="skill">
+              </div>
+              <div class="about-skill">
+                <h3>Html</h3>
+                <div class="skill-bar-max">
+                  <div class="skill-bar-now"></div>
+                </div>
               </div>
             </div>
             <div class="skill">
-              <h3>Css</h3>
-              <div class="stars">
-                <input type="radio" name="css" />
-                <input type="radio" name="css" />
-                <input type="radio" name="css" checked />
-                <input type="radio" name="css" />
-                <input type="radio" name="css" />
-                <input type="radio" name="css" />
-                <input type="radio" name="css" />
-                <input type="radio" name="css" />
-                <input type="radio" name="css" />
-                <input type="radio" name="css" />
+              <div class="radio-container">
+                <input type="radio" name="skill">
+              </div>
+              <div class="about-skill">
+                <h3>css</h3>
+                <div class="skill-bar-max">
+                  <div class="skill-bar-now"></div>
+                </div>
               </div>
             </div>
             <div class="skill">
-              <h3>JavaScript</h3>
-              <div class="stars">
-                <input type="radio" name="js" />
-                <input type="radio" name="js" />
-                <input type="radio" name="js" />
-                <input type="radio" name="js" />
-                <input type="radio" name="js" checked />
-                <input type="radio" name="js" />
-                <input type="radio" name="js" />
-                <input type="radio" name="js" />
-                <input type="radio" name="js" />
-                <input type="radio" name="js" />
+              <div class="radio-container">
+                <input type="radio" name="skill">
+              </div>
+              <div class="about-skill">
+                <h3>javascript</h3>
+                <div class="skill-bar-max">
+                  <div class="skill-bar-now"></div>
+                </div>
               </div>
             </div>
             <div class="skill">
-              <h3>Telegraf</h3>
-              <div class="stars">
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" checked />
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" />
-                <input type="radio" name="bot" />
+              <div class="radio-container">
+                <input type="radio" name="skill">
+              </div>
+              <div class="about-skill">
+                <h3>tailwind</h3>
+                <div class="skill-bar-max">
+                  <div class="skill-bar-now"></div>
+                </div>
               </div>
             </div>
             <div class="skill">
-              <h3>Tailwind</h3>
-              <div class="stars">
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" checked />
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" />
-                <input type="radio" name="tailwind" />
+              <div class="radio-container">
+                <input type="radio" name="skill">
+              </div>
+              <div class="about-skill">
+                <h3>Telegraf</h3>
+                <div class="skill-bar-max">
+                  <div class="skill-bar-now"></div>
+                </div>
               </div>
             </div>
             <div class="skill">
-              <h3>Figma</h3>
-              <div class="stars">
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" checked />
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" />
-                <input type="radio" name="figma" />
+              <div class="radio-container">
+                <input type="radio" name="skill">
+              </div>
+              <div class="about-skill">
+                <h3>Figam</h3>
+                <div class="skill-bar-max">
+                  <div class="skill-bar-now"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -398,10 +374,10 @@
               <h3>چرا به سمت برنامه نویسی اومدم!؟</h3>
               <p>
                 اولین ملاقات من با کامپیوتر بر میگرده به ۶ سالگی من.<br />
-                و بعد از یکسال تمام اصرار کردن به خانواده بلاخره بدستش آوردم. چند
-                سال بعد از اون، تلگرام اومد و با ربات های تلگرام آشنا شدم و دوست
-                داشتم ایده های خودمو بسازم<br />پس درباره ساختن اونها تحقیق کردم و
-                فهمیدم باید برنامه نویسی بلد باشم. <br />
+                و بعد از یکسال تمام اصرار کردن به خانواده بلاخره بدستش آوردم.
+                چند سال بعد از اون، تلگرام اومد و با ربات های تلگرام آشنا شدم و
+                دوست داشتم ایده های خودمو بسازم<br />پس درباره ساختن اونها تحقیق
+                کردم و فهمیدم باید برنامه نویسی بلد باشم. <br />
                 و این شد که استارت کار خورد😅...
               </p>
             </li>
@@ -418,8 +394,8 @@
           </ul>
 
           <div class="next-back">
-            <img src="./assets/img/icons/arrow-R.png" alt="" class="nextPage"/>
-            <img src="./assets/img/icons/arrow-L.png" alt="" class="backPage"/>
+            <img src="./assets/img/icons/arrow-R.png" alt="" class="nextPage" />
+            <img src="./assets/img/icons/arrow-L.png" alt="" class="backPage" />
           </div>
         </div>
       </section>
@@ -467,13 +443,10 @@
           </div>
         </a>
       </div>
+      <i class="fa-solid fa-arrow-right-from-bracket"></i>
     </footer>
 
-    <script src="./main.js"></script>
-    <script
-      src="https://kit.fontawesome.com/e7cbb0e23e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/miniprojects.js"></script>
   </body>
-
 </html>
