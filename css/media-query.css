@@ -38,6 +38,11 @@
         gap: 5px;
     }
 
+    .skills-section {
+        height: 68rem;
+        margin-bottom: 10rem;
+    }
+
     .about-img-container img {
         width: 25rem;
     }
@@ -77,8 +82,7 @@
     }
 
     .skills-section {
-        height: 68rem;
-        margin-bottom: 10rem;
+        margin-top: 0;
     }
 
     .skills-container {
