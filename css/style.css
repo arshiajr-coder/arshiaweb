@@ -224,6 +224,10 @@ header {
     background: linear-gradient(18deg, var(--lightBlue) 0%, var(--darkBlue) 100%);
 }
 
+.mini-header {
+    height: 50vh;
+}
+
 /*? Navbar Start  */
 
 .header-top {
@@ -373,6 +377,15 @@ nav a:hover {
 
 /*? Navbar Finished */
 /*? Header Main Start */
+
+.mini-header-content{
+    height: 100%;
+}
+
+.mini-header-content p{
+    font-size: 4rem;
+    color: var(--white);
+}
 
 .header-main {
     width: 100%;
@@ -874,6 +887,16 @@ main {
     width: 4rem;
     cursor: pointer;
     border-radius: 50%;
+    box-shadow: -1px -1px 2px rgb(255, 255, 255, .2),
+        inset 2px 2px 5px rgb(255, 255, 255, .2),
+        8px 30px 30px rgba(0, 0, 0, 0.4),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+    background-color: rgb(214, 214, 214);
+}
+
+.next-back img:active {
+    box-shadow: none;
+    background-color: transparent;
 }
 
 footer {
