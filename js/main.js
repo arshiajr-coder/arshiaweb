@@ -148,7 +148,7 @@ function showAlert() {
     const sectionTop = section.offsetTop;
     const sectionHeigth = section.clientHeight;
 
-    if (pageYOffset >= sectionTop - sectionHeigth / 3) {
+    if (window,scrollY >= sectionTop - sectionHeigth / 3) {
       current = section.getAttribute("class").split(" ")[0];
     }
   });
@@ -212,7 +212,7 @@ function tabFunc(event) {
   const workSample = document.querySelectorAll(".work-sample-item");
 
   tabItem.forEach((item) => {
-    item.classList.remove("active");
+    item.classList.remove("tab-active");
   });
 
   const category = event.target.id;
@@ -247,7 +247,7 @@ function tabFunc(event) {
   });
 
   const currentTab = event.target;
-  currentTab.classList.add("active");
+  currentTab.classList.add("tab-active");
 }
 
 //? Next & Back in About me Code */

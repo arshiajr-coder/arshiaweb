@@ -64,6 +64,74 @@
         top: 6rem;
     }
 
+    /* //// */
+    .picture-editor-container{
+        width: 80rem;
+        padding: 2rem 3rem;
+    }
+
+    .wrapper {
+        flex-direction: row;
+        margin-bottom: 2rem;
+        height: 350px;
+    }
+
+    .editor-panel{
+        padding: 2rem 2rem 0 2rem;
+        width: 400px;
+        height: 317px;
+        justify-content: space-around;
+        margin: -.4rem 0 0 ;
+    }
+
+    .wrapper .filter{
+        margin-bottom: 1rem;
+    }
+
+    .option{
+        margin-bottom: 4rem;
+    }
+
+    .preview-img img {
+        max-width: 93%;
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    .controls{
+        margin: 0 auto;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .controls .row{
+        flex-direction: row;
+        width: auto;
+        margin-left: 2rem;
+    }
+
+    .controls .row button{
+        margin-right: 1rem;
+    }
+
+    .controls button{
+        padding: .9rem 2rem;
+        width: auto;
+    }
+
+    .controls button i{
+        margin-right: .3rem;
+    }
+
+    .save-img i{
+        font-size: 1.5rem;
+    }
+
+    .choose-img i{
+        font-size: 1.3rem;
+    }
+
+    /* ///// */
     .work-samples {
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem 3rem;
@@ -322,7 +390,7 @@
         gap: 4rem 3rem;
     }
 
-    .skills-container h2{
+    .skills-container h2 {
         font-size: 2.7rem;
     }
 
@@ -331,19 +399,19 @@
         height: 200px;
     }
 
-    .skill h3{
+    .skill h3 {
         font-size: 2.5rem;
     }
 
-    .skill-show h3{
+    .skill-show h3 {
         font-size: 2rem;
     }
 
     .skill:nth-child(2) h3 {
         font-size: 2.6rem;
     }
-    
-    .skill-show:nth-child(2) h3{
+
+    .skill-show:nth-child(2) h3 {
         font-size: 2.2rem;
     }
 

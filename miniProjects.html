@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
     />
     <title>Document</title>
   </head>
@@ -24,17 +24,74 @@
           <nav class="nav-mini">
             <a href="" onclick="modifyUrl('Main Page', './index.html')">
               صفحه اصلی
-              <img src="./assets/img/icons/icons8-main-page.svg" alt="">
+              <img src="./assets/img/icons/icons8-main-page.svg" alt="" />
             </a>
           </nav>
         </div>
       </section>
       <section class="mini-header-content align">
-        <p>به صفحه <span style="color: var(--purple);">مینی پروژه ها</span> خوش اومدی</p>
+        <p>
+          به صفحه <span style="color: var(--purple)">مینی پروژه ها</span> خوش
+          اومدی
+        </p>
       </section>
     </header>
 
-    <main class="mini-main"></main>
+    <main class="mini-main">
+      <section class="picture-editor-section">
+        <div class="picture-editor-container disable">
+          <h2>ویرایشگر عکس</h2>
+          <div class="wrapper">
+            <div class="editor-panel">
+              <div class="filter">
+                <label class="title">فیلتر ها</label>
+                <div class="option">
+                  <button class="btn option-active" id="brightness">روشنایی</button>
+                  <button class="btn" id="saturation">اشباع</button>
+                  <button class="btn" id="inversion">وارونگی</button>
+                  <button class="btn" id="grayscale">مقیاس خاکستری</button>
+                </div>
+                <div class="slider">
+                  <div class="filter-info">
+                    <p class="filter-name">روشنایی</p>
+                    <p class="value">100%</p>
+                  </div>
+                  <input type="range" value="100" min="0" max="200" />
+                </div>
+              </div>
+              <div class="rotate">
+                <label class="title">چرخش و ورق زدن</label>
+                <div class="option">
+                  <button id="left" class="align">
+                    <i class="fa-solid fa-rotate-left"></i>
+                  </button>
+                  <button id="right" class="align">
+                    <i class="fa-solid fa-rotate-right"></i>
+                  </button>
+                  <button id="horizontal" class="align">
+                    <i class="bx bx-reflect-vertical"></i>
+                  </button>
+                  <button id="vertical" class="align">
+                    <i class="bx bx-reflect-horizontal"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="preview-img">
+              <img src="./assets/img/image-placeholder.svg" alt="preview-img">
+            </div>
+          </div>
+          <div class="controls align">
+            <button class="reset-filter btn align">بازنشانی فیلتر <i class="bx bx-reset"></i></button>
+            <div class="row">
+              <input type="file" class="file-input" hidden>
+              <button class="choose-img btn align">انتخاب عکس <i class="bx bx-pointer"></i></button>
+              <button class="save-img btn align">ذخیره عکس <i class="bx bx-download"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="align">
       <p>
@@ -78,8 +135,8 @@
           </div>
         </a>
       </div>
-      <i class="fa-solid fa-arrow-right-from-bracket"></i>
     </footer>
     <script src="./js/miniprojects.js"></script>
+    <script src="./js/all.min.js"></script>
   </body>
 </html>

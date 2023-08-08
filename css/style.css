@@ -17,6 +17,11 @@ html {
     font-family: "vazir";
 }
 
+*::selection{
+    background-color: var(--purple);
+    color: white;
+}
+
 body {
     background-color: var(--darkBlue);
 }
@@ -378,11 +383,11 @@ nav a:hover {
 /*? Navbar Finished */
 /*? Header Main Start */
 
-.mini-header-content{
+.mini-header-content {
     height: 100%;
 }
 
-.mini-header-content p{
+.mini-header-content p {
     font-size: 4rem;
     color: var(--white);
 }
@@ -478,6 +483,169 @@ main {
     padding-top: 20rem;
 }
 
+/* ///// */
+
+.picture-editor-container {
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    width: 90%;
+    background-color: rgb(253, 253, 253);
+    border-radius: 5px;
+}
+
+.picture-editor-container.disable :where(.editor-panel, .reset-filter, .save-img){
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.picture-editor-container h2{
+    text-align: center;
+    color: #454545;
+    font-size: 2rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.editor-panel{
+    padding: 2rem;
+    border: 1px solid #ccc;
+    width: 95%;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+label{
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.filter .option{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.filter .option button{
+    padding: .6rem 0;
+    width: calc(50% - 3px);
+    border: 1px solid #767676;
+    font-size: 1.3rem;
+    color: #767676;
+    margin-top: .7rem;
+    background-color: transparent;
+}
+
+.option-active {
+    background-color: var(--purple) !important;
+    color: rgb(237, 237, 237) !important;
+    transition: all .3s;
+}
+
+.filter .option button:hover{
+    border: 1px solid purple;
+    color: var(--purple);
+    transition: all .2s;
+}
+
+.filter-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #767676;
+}
+
+.filter-name{
+    font-size: 1.2rem;
+}
+
+.slider input{
+    width: 100%;
+    height: 4px;
+    margin-bottom: 2.5rem;
+    accent-color: var(--purple);
+}
+
+.preview-img {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.preview-img img {
+    max-width: 90%;
+    object-fit: contain;
+}
+
+.rotate .option{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rotate .option button{
+    width: calc(25% - 10px);
+    color: #767676;
+    height: 3.7rem;
+    background-color: transparent;
+    border: 1px solid #767676;
+    cursor: pointer;
+}
+
+.bx-reflect-horizontal, .bx-reflect-vertical{
+    font-size: 1.6rem;
+}
+
+.controls{
+    flex-direction: column;
+}
+
+.controls .row{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls button{
+    border: 1px solid #767676;
+    color: #767676;
+    padding: .5rem 1rem;
+    width: 90%;
+    margin-top: .5rem;
+    background-color: transparent;
+    transition: all .3s;
+}
+
+.reset-filter:hover{
+    background-color: #7c7c7c;
+    color: rgb(253, 253, 253);
+    transition: background-color .3s;
+}
+
+.reset-filter:hover i{
+    animation: circleRotate 1s;
+}
+
+.controls .choose-img{
+    border: none;
+    background-color: rgb(93, 146, 237);
+    color: rgb(253, 253, 253);
+}
+
+.controls .save-img{
+    border: none;
+    background-color: var(--purple);
+    color: rgb(253, 253, 253);
+}
+/* /////// */
+
 .tabs-container {
     text-align: center;
 }
@@ -496,7 +664,7 @@ main {
     margin: 0 .2rem;
 }
 
-.active {
+.tab-active {
     background-color: var(--white) !important;
     color: var(--darkBlue) !important;
     transition: all .3s;
@@ -953,6 +1121,16 @@ footer p {
 
     100% {
         transform: translateY(-.1rem)
+    }
+}
+
+@keyframes circleRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
     }
 }
 
