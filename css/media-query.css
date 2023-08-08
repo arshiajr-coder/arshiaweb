@@ -65,6 +65,10 @@
     }
 
     /* //// */
+    .mini-header-content p{
+        font-size: 3.5rem;
+    }
+
     .picture-editor-container{
         width: 80rem;
         padding: 2rem 3rem;
