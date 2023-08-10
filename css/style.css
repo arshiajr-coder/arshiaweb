@@ -742,14 +742,14 @@ label{
     margin-top: 1.5rem;
     padding: .3rem;
     width: 100%;
-    border: 1px solid rgb(127, 1, 146);
+    border: 1px solid var(--lightBlue);
     background-color: rgb(237, 237, 237);
-    color: var(--purple);
+    color: var(--lightBlue);
 }
 
 .work-sample-btn:hover {
-    border: 1px solid var(--purple);
-    background-color: var(--purple);
+    border: 1px solid var(--lightBlue);
+    background-color: var(--lightBlue);
     color: var(--white);
     transition: all .3s;
 }
